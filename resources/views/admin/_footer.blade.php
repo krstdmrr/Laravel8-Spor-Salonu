@@ -1,3 +1,12 @@
+<footer class="footer">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="copyright">
+                <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+            </div>
+        </div>
+    </div>
+</footer>
 <!-- Jquery JS-->
 <script src="{{asset('assets')}}/admin/vendor/jquery-3.2.1.min.js"></script>
 <!-- Bootstrap JS-->

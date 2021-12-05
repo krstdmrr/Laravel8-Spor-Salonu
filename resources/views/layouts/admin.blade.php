@@ -41,10 +41,12 @@
         <div class="page-container">
             @include('admin._headerDesktop')
             @yield('content')
+            @include('admin._footer')
         </div>
     </div>
-    @include('admin._footerJS')
-    @yield('footer')
+
+
+    @yield('footerJS')
 
 </body>
 </html>
