@@ -46,7 +46,7 @@
     </div>
 
 
-    @yield('footerJS')
+    @yield('footer')
 
 </body>
 </html>

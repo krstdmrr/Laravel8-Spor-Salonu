@@ -20,11 +20,13 @@
                 <div class="au-card m-b-30">
                     <div class="card-header">
                         <h4 class="card-title">Category List</h4>
+                        <a  href="{{route('admin_category_add')}}" type="button" class="btn btn-primary">Add Category</a>
+
                     </div>
                     <div class="card-body">
                         <!-- DATA TABLE-->
                         <div class="table-responsive m-b-40">
-                            <table class="table table-borderless table-data3">
+                            <table id="table_id" class="table table-borderless table-data3">
                                 <thead>
                                 <tr>
                                     <th>Id</th>
@@ -37,16 +39,19 @@
                                 </thead>
                                 <tbody>
                                 @foreach($datalist as $rs)
+
                                 <tr>
                                     <td>{{$rs->id}}</td>
                                     <td>{{$rs->parent_id}}</td>
                                     <td>{{$rs->title}}</td>
                                     <td>{{$rs->status}}</td>
                                     <td>Edit</td>
-                                    <td>Delete</td>
+                                    <td><a href="{{route('admin_category_delete',['id'=>$rs->id])}}"
+                                           onclick="return confirm('Delete! Are you sure=!')">Delete</a> </td>
                                 </tr>
-                                </tbody>
+
                                 @endforeach
+                                    </tbody>
                             </table>
                         </div>
                         <!-- END DATA TABLE-->
@@ -64,4 +69,14 @@
 
     </div>
 
+@endsection
+
+@section('footer')
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+    <script>
+        $(document).ready( function () {
+            $('#table_id').DataTable();
+        } );
+</script>
 @endsection
