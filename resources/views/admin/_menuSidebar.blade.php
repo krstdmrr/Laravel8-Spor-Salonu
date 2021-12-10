@@ -16,7 +16,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('admin_home')}}" class="nav-link">
+                    <a href="{{route('admin_products')}}" class="nav-link">
                         <i class="fas fa-angle-left right"></i>Products
                         <span class="right badge badge-danger ">New</span>
                     </a>
