@@ -24,7 +24,7 @@
                     <div class="card-body">
                         <div class="card">
                             <div class="card-body card-block">
-                                <form role="form" action="{{route('admin_product_store')}}" method="post" class="form-horizontal">
+                                <form role="form" action="{{route('admin_product_store')}}" method="post" enctype="multipart/form-data" class="form-horizontal">
                                     @csrf
                                     <div class="form-group">
                                         <label>Parent</label>
@@ -65,6 +65,10 @@
                                         <div class="form-group">
                                             <label>Slug</label>
                                             <input type="text" name="slug" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Image</label>
+                                            <input type="file" name="image" class="form-control">
                                         </div>
                                         <div class="form-group">
                                         <label>Status</label>

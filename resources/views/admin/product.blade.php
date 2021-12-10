@@ -35,6 +35,7 @@
                                     <th>Price</th>
                                     <th>Months</th>
                                     <th>Status</th>
+                                    <th>Image</th>
                                     <th style="..." colspan="2">Actions</th>
                                 </tr>
                                 </thead>
@@ -48,6 +49,12 @@
                                         <td>{{$rs->price}}</td>
                                         <td>{{$rs->months}}</td>
                                         <td>{{$rs->status}}</td>
+                                        <td>
+                                            @if($rs->image)
+                                                <img src="{{ Storage::url($rs->image) }}" height="30" alt="">
+                                            @endif
+
+                                        </td>
                                         <td><a href="{{route('admin_product_edit',['id'=>$rs->id])}}" ><i class="fa fa-edit" ></i></a></td>
                                         <td><a href="{{route('admin_product_delete',['id'=>$rs->id])}}"
                                                onclick="return confirm('Delete! Are you sure=!')"><i class="fa fa-eraser" ></i></a> </td>

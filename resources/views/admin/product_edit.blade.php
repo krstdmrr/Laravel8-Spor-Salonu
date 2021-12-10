@@ -24,7 +24,7 @@
                     <div class="card-body">
                         <div class="card">
                             <div class="card-body card-block">
-                                <form role="form" action="{{route('admin_product_update',['id'=>$data->id])}}" method="post" class="form-horizontal">
+                                <form role="form" action="{{route('admin_product_update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data" class="form-horizontal">
                                     @csrf
                                         <div class="form-group">
                                             <label>Parent</label>
@@ -66,6 +66,14 @@
                                         <div class="form-group">
                                             <label>Slug</label>
                                             <input type="text" name="slug" value="{{$data->slug}}" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Image</label>
+                                            <input type="file" name="image" value="{{$data->image}}" class="form-control">
+
+                                            @if($data->image)
+                                                <img src="{{Storage::url($data->image)}}" height="60" alt="">,
+                                            @endif
                                         </div>
                                         <div class="form-group">
                                         <label>Status</label>
