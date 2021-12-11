@@ -36,6 +36,7 @@
                                     <th>Months</th>
                                     <th>Status</th>
                                     <th>Image</th>
+                                    <th>Image Gallery</th>
                                     <th style="..." colspan="2">Actions</th>
                                 </tr>
                                 </thead>
@@ -55,8 +56,10 @@
                                             @endif
 
                                         </td>
-                                        <td><a href="{{route('admin_product_edit',['id'=>$rs->id])}}" ><i class="fa fa-edit" ></i></a></td>
-                                        <td><a href="{{route('admin_product_delete',['id'=>$rs->id])}}"
+                                        <td align="center"><a href="{{route('admin_image_add',['product_id'=>$rs->id])}}"onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=700')"><i class="fa fa-picture-o"></i></a></td>
+
+                                        <td align="center"><a href="{{route('admin_product_edit',['id'=>$rs->id])}}" ><i class="fa fa-edit" ></i></a></td>
+                                        <td align="center"><a href="{{route('admin_product_delete',['id'=>$rs->id])}}"
                                                onclick="return confirm('Delete! Are you sure=!')"><i class="fa fa-eraser" ></i></a> </td>
                                 </tr>
 
