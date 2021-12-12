@@ -28,7 +28,7 @@
                                     @csrf
                                         <div class="form-group">
                                             <label>Parent</label>
-                                            <select name="parent_id" id="select" class="form-control">
+                                            <select name="category_id" id="select" class="form-control">
                                                 <option value="0" >Main Category</option>
                                                 @foreach($datalist as $rs)
                                                 <option value="{{$rs->id}}" @if($rs->id == $data->category_id) selected="selected" @endif >{{$rs->title}}</option>
@@ -69,7 +69,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Image</label>
-                                            <input type="file" name="image" value="{{$data->image}}" class="form-control">
+                                            <input type="file" name="image"  class="form-control">
 
                                             @if($data->image)
                                                 <img src="{{Storage::url($data->image)}}" height="60" alt="">,
