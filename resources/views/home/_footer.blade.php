@@ -1,3 +1,7 @@
+@php
+$setting= \App\Http\Controllers\HomeController::getSetting();
+@endphp
+
 <!-- footer_start  -->
 <footer class="footer">
     <div class="footer_top">
@@ -6,46 +10,47 @@
                 <div class="col-xl-3 col-md-6 col-lg-3 ">
                     <div class="footer_widget">
                         <div class="footer_logo">
-                            <a href="#">
+                            <a href="{{route('home')}}">
                                 <img src="{{asset('assets')}}/img/footer_logo.png" alt="">
                             </a>
                         </div>
-                        <p>5th flora, 700/D kings road, green <br> lane New York-1782 <br>
-                            <a href="#">+10 367 826 2567</a> <br>
-                            <a href="#">contact@carpenter.com</a>
-                        </p>
-                        <p>
+                        <h3><b>Adress</b></h3>
+                        {{$setting->company}} <br>
+                        {{$setting->adress}} <br>
+                        <strong>Phone: </strong>{{$setting->phone}} <br>
+                        <strong>Fax: </strong>{{$setting->fax}} <br>
+                        <strong>Email: </strong>{{$setting->email}} <br>
 
-
-
-                        </p>
                         <div class="socail_links">
                             <ul>
+                                @if($setting->facebook !=null)
                                 <li>
-                                    <a href="#">
-                                        <i class="ti-facebook"></i>
+                                    <a href="{{$setting->facebook}}" target="_blank">
+                                        <i class="fa fa-facebook"></i>
                                     </a>
                                 </li>
+                                @endif
+                                @if($setting->twitter !=null)
                                 <li>
-                                    <a href="#">
-                                        <i class="ti-twitter-alt"></i>
+                                    <a href="{{$setting->twitter}}" target="_blank">
+                                        <i class="fa fa-twitter"></i>
                                     </a>
                                 </li>
+                                @endif
+                                @if($setting->instagram !=null)
                                 <li>
-                                    <a href="#">
+                                    <a href="{{$setting->instagram}}" target="_blank">
                                         <i class="fa fa-instagram"></i>
                                     </a>
                                 </li>
+                                @endif
+                                @if($setting->youtube !=null)
                                 <li>
-                                    <a href="#">
-                                        <i class="fa fa-pinterest"></i>
+                                    <a href="{{$setting->youtube}}" target="_blank">
+                                        <i class="fa fa-youtube"></i>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-youtube-play"></i>
-                                    </a>
-                                </li>
+                                @endif
                             </ul>
                         </div>
 
@@ -58,9 +63,10 @@
                         </h3>
                         <ul class="links">
                             <li><a href="#">Pricing</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#"> Gallery</a></li>
-                            <li><a href="#"> Contact</a></li>
+                            <li><a href="{{route('aboutus')}}">About</a></li>
+                            <li><a href="#">Gallery</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="{{route('admin_login')}}">Login</a></li>
                         </ul>
                     </div>
                 </div>
@@ -87,7 +93,7 @@
                 <div class="col-xl-12">
                     <p class="copy_right text-center">
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | {{$setting->company}}
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </p>
                 </div>

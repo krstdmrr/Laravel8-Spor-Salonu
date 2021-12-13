@@ -1,10 +1,10 @@
 @extends('layouts.home')
 
-@section('title', 'Laravel Spor Salonu Sitesi')
+@section('title', $setting->title)
 @section('description')
-    Türkiyenin en iyi Spor Salonu
+{{$setting->title}}
 @endsection
-@section('keywords','Spor,Fitness,BodyBuilding,KickBox,Box,Sağlık,Cardio')
+@section('keywords',$setting->title)
 
 @section('content')
     <!-- features_area_start  -->
