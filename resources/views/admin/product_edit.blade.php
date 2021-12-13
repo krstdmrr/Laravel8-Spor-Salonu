@@ -27,11 +27,10 @@
                                 <form role="form" action="{{route('admin_product_update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data" class="form-horizontal">
                                     @csrf
                                         <div class="form-group">
-                                            <label>Parent</label>
+                                            <label>Category</label>
                                             <select name="category_id" id="select" class="form-control">
-                                                <option value="0" >Main Category</option>
                                                 @foreach($datalist as $rs)
-                                                <option value="{{$rs->id}}" @if($rs->id == $data->category_id) selected="selected" @endif >{{$rs->title}}</option>
+                                                <option value="{{$rs->id}}" @if($rs->id == $data->category_id) selected="selected" @endif >{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}</option>
                                                 @endforeach
                                             </select>
                                         </div>

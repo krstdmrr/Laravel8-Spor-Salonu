@@ -1,3 +1,6 @@
+@php
+    $parentCategories = \App\Http\Controllers\HomeController::categoryList();
+@endphp
 <!-- header-start -->
 <header>
     <div class="header-area ">
@@ -18,7 +21,22 @@
                                     <ul id="navigation">
                                         <li><a href="index.html">home</a></li>
                                         <li><a href="about.html">about</a></li>
-                                        <li><a href="pricing.html">pricing</a></li>
+                                        <li><a href="pricing.html">pricing <i class="ti-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                @foreach($parentCategories as $rs)
+                                                    <li class="dropdown side-dropdown">
+                                                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">{{$rs->title}}</a>
+                                                            <div class="custom-menu">
+                                                                <div class="row">
+                                                                    @if(count($rs->children))
+                                                                        @include('home.categorytree',['children'=>$rs->children])
+                                                                    @endif
+                                                                </div>
+                                                            </div>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </li>
                                         <li><a href="gallery.html">gallery</a></li>
                                         <li><a href="#">pages <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
