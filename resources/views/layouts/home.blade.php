@@ -34,9 +34,6 @@
 
 <body>
 @include('home._header')
-@include('home._slider')
-@include('home._category')
-
 @section('content')
     içerik alanı
 @show

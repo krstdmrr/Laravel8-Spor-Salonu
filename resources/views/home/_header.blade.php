@@ -66,7 +66,7 @@
                                                 class="fa fa-user-o white_border white_border"></i> {{Auth::user()->name}} </strong>
                                     </a>
                                     <ul class="dropdown-menu bg-transparent">
-                                        <li><a href=""><i class="fa fa-user-o text-white"> My Account</i></a>
+                                        <li><a href="{{route('myprofile')}}"><i class="fa fa-user-o text-white"> My Account</i></a>
                                         </li>
                                         <li><a href="#"><i class="fa fa-heart-o text-white"> My Wishlist</i></a>
                                         </li>
