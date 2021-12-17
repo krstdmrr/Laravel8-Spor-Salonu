@@ -19,24 +19,26 @@
     </div>
     <!-- bradcam_area end -->
     <div>
-        <ul class="breadcrumb" style="background-color: darkred;border-radius:0.15px;margin-bottom: 0px">
+        <ul class="breadcrumb-item" style="background-color: darkred;border-radius:0.15px;margin-bottom: 0px;list-style: ">
             <li><a href="{{route('home')}}">Home</a></li>
             <li class="active">User Profile</li>
         </ul>
     </div>
     <div >
-        <div class="container">
+        <div class="container" >
             <div class="row align-items-lg-start">
                 <div class="col-md-2">
                     @include('home.usermenu')
                 </div>
-                <div class="col-md-10">
+                <div id="main" class="col-md-10">
                     @include('profile.show')
+
                 </div>
 
             </div>
         </div>
     </div>
 @endsection
+<script src="{{asset('assets')}}/js/vendor/jquery-1.12.4.min.js"></script>
 
 

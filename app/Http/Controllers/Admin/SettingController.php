@@ -90,7 +90,7 @@ class SettingController extends Controller
         $data->keywords = $request->input('keywords');
         $data->description = $request->input('description');
         $data->company = $request->input('company');
-        $data->adress = $request->input('adress');
+        $data->address = $request->input('address');
         $data->phone = $request->input('phone');
         $data->fax = $request->input('fax');
         $data->email = $request->input('email');

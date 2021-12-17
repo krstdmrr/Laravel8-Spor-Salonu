@@ -104,7 +104,6 @@ $setting= \App\Http\Controllers\HomeController::getSetting();
 <!-- footer_end  -->
 <!-- JS here -->
 <script src="{{asset('assets')}}/js/vendor/modernizr-3.5.0.min.js"></script>
-<script src="{{asset('assets')}}/js/vendor/jquery-1.12.4.min.js"></script>
 <script src="{{asset('assets')}}/js/popper.min.js"></script>
 <script src="{{asset('assets')}}/js/bootstrap.min.js"></script>
 <script src="{{asset('assets')}}/js/owl.carousel.min.js"></script>
@@ -118,7 +117,6 @@ $setting= \App\Http\Controllers\HomeController::getSetting();
 <script src="{{asset('assets')}}/js/wow.min.js"></script>
 <script src="{{asset('assets')}}/js/gijgo.min.js"></script>
 <script src="{{asset('assets')}}/js/nice-select.min.js"></script>
-<script src="{{asset('assets')}}/js/jquery.slicknav.min.js"></script>
 <script src="{{asset('assets')}}/js/jquery.magnific-popup.min.js"></script>
 <script src="{{asset('assets')}}/js/plugins.js"></script>
 

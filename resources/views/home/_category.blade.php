@@ -19,4 +19,4 @@
         </div>
     </div>
 </div>
-<!--/ catagory_area  --><?php
+<!--/ catagory_area  -->

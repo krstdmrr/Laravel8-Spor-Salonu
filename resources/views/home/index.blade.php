@@ -321,6 +321,12 @@
         </div>
     </div>
     <!-- big_offer_area end  -->
+
 @endsection
+<script src="{{asset('assets')}}/js/vendor/jquery-1.12.4.min.js"></script>
+<script src="{{asset('assets')}}/js/jquery.slicknav.min.js"></script>
+
+
+
 
 

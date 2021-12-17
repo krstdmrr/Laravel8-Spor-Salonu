@@ -27,7 +27,7 @@
                                                     <li class="dropdown side-dropdown">
                                                         <a class="dropdown-toggle" data-toggle="dropdown"
                                                            aria-expanded="true">{{$rs->title}}</a>
-                                                        <div class="custom-menu">
+                                                        <div class="sub-menu">
                                                             <div class="row">
                                                                 @if(count($rs->children))
                                                                     @include('home.categorytree',['children'=>$rs->children])
@@ -65,7 +65,7 @@
                                         <strong class="text-uppercase text-white"><i
                                                 class="fa fa-user-o white_border white_border"></i> {{Auth::user()->name}} </strong>
                                     </a>
-                                    <ul class="dropdown-menu bg-transparent">
+                                    <ul class="dropdown-menu" style="background-color: black;" >
                                         <li><a href="{{route('myprofile')}}"><i class="fa fa-user-o text-white"> My Account</i></a>
                                         </li>
                                         <li><a href="#"><i class="fa fa-heart-o text-white"> My Wishlist</i></a>

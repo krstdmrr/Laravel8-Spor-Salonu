@@ -67,7 +67,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Adress</label>
-                                                    <input type="text" name="adress" value="{{$data->adress}}" class="form-control">
+                                                    <input type="text" name="address" value="{{$data->address}}" class="form-control">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Phone</label>
