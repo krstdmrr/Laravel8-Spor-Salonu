@@ -19,9 +19,9 @@
     </div>
     <!-- bradcam_area end -->
     <div>
-        <ul class="breadcrumb-item" style="background-color: darkred;border-radius:0.15px;margin-bottom: 0px;list-style: ">
-            <li><a href="{{route('home')}}">Home</a></li>
-            <li class="active">User Profile</li>
+        <ul class="breadcrumb" style="background-color: darkred;border-radius:0.15px;margin-bottom: 0px">
+            <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
+            <li class="breadcrumb-item active">User Profile</li>
         </ul>
     </div>
     <div >

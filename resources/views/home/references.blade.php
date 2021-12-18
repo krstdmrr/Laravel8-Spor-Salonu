@@ -1,6 +1,10 @@
 @extends('layouts.home')
 
-@section('title', 'Blank Page')
+@section('title', 'References-'. $setting->title)
+@section('description'){{$setting->description}} @endsection
+@section('keywords',$setting->keywords)
+
+
 
 @section('content')
     <!-- bradcam_area -->
@@ -10,7 +14,7 @@
                 <div class="row align-items-center justify-content-center">
                     <div class="col-xl-9">
                         <div class="bradcam_text text-center">
-                            <h3>BLANK</h3>
+                            <h3>References</h3>
                         </div>
                     </div>
                 </div>
@@ -21,12 +25,12 @@
     <div>
         <ul class="breadcrumb" style="background-color: darkred;border-radius:0.15px;margin-bottom: 0px">
             <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
-            <li class="breadcrumb-item active">Blank</li>
+            <li class="breadcrumb-item active">References</li>
         </ul>
     </div>
     <div class="features_area">
         <div class="container">
-
+            {!!$setting->references!!}
         </div>
     </div>
 @endsection
