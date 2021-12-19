@@ -20,7 +20,6 @@
                 <div class="au-card m-b-30">
                     <div class="card-header">
                         @include('home.message')
-
                     </div>
                     <div class="card-body">
                         <!-- DATA TABLE-->

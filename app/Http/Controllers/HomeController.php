@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Message;
+use App\Models\Product;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -23,15 +24,30 @@ class HomeController extends Controller
     public function index()
     {
         $setting = Setting::first();
+        $slider= Product::select('id','title','image','price','slug')->limit(4)->get();
 
-        return view('home.index', ['setting' => $setting,'page'=>'home']);
+        $data= [
+            'setting' => $setting,
+            'slider' => $slider,
+            'page'=>'home'];
+
+        return view('home.index',$data);
+    }
+
+    public function product($id,$slug)
+    {
+        $data = Product::find($id);
+        print_r($data);
+        exit();
     }
 
     public function aboutus()
     {
         $setting = Setting::first();
         return view('home.about', ['setting' => $setting]);
-    }public function gallery()
+    }
+
+    public function gallery()
     {
         return view('home.about');
     }
@@ -62,7 +78,7 @@ class HomeController extends Controller
         $data->message =$request->input('message');
         $data->save();
 
-        return redirect()->route('contact')->with('success','Mesajınız kaydedilmiştir, Teşekkür Ederiz.');
+        return redirect()->route('home');
     }
 
     public function login()
