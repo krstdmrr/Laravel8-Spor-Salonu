@@ -28,7 +28,7 @@
             <li class="breadcrumb-item active">About Us</li>
         </ul>
     </div>
-    <div class="features_area">
+    <div>
         <div class="container">
             {!!$setting->aboutus!!}
         </div>

@@ -22,6 +22,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{route('admin_message')}}" class="nav-link">
+                        <i class="fas fa-angle-left right"></i>Contact Messages
+
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{route('admin_setting')}}" class="nav-link">
                         <i class="fas fa-circle text-danger"></i>Settings
 
