@@ -20,7 +20,7 @@
                 <div class="au-card m-b-30">
                     <div class="card-header">
                         <h4 class="card-title">Category List</h4>
-                        <a  href="{{route('admin_product_add')}}" type="button" class="btn btn-primary">Add Product</a>
+                        <a href="{{route('admin_product_add')}}" type="button" class="btn btn-primary">Add Product</a>
 
                     </div>
                     <div class="card-body">
@@ -56,19 +56,23 @@
                                             @endif
 
                                         </td>
-                                        <td align="center"><a href="{{route('admin_image_add',['product_id'=>$rs->id])}}"onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=700')"><i class="fa fa-picture-o"></i></a></td>
+                                        <td align="center"><a
+                                                href="{{route('admin_image_add',['product_id'=>$rs->id])}}"
+                                                onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=700')"><i
+                                                    class="fa fa-picture-o"></i></a></td>
 
-                                        <td align="center"><a href="{{route('admin_product_edit',['id'=>$rs->id])}}" ><i class="fa fa-edit" ></i></a></td>
+                                        <td align="center"><a href="{{route('admin_product_edit',['id'=>$rs->id])}}"><i
+                                                    class="fa fa-edit"></i></a></td>
                                         <td align="center"><a href="{{route('admin_product_delete',['id'=>$rs->id])}}"
-                                               onclick="return confirm('Delete! Are you sure=!')"><i class="fa fa-eraser" ></i></a> </td>
-                                </tr>
+                                                              onclick="return confirm('Delete! Are you sure=!')"><i
+                                                    class="fa fa-eraser"></i></a></td>
+                                    </tr>
 
                                 @endforeach
-                                    </tbody>
+                                </tbody>
                             </table>
                         </div>
                         <!-- END DATA TABLE-->
-
 
 
                     </div>
@@ -86,10 +90,11 @@
 
 @section('footer')
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8"
+            src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
     <script>/*
         $(document).ready( function () {
             $('#table_id').DataTable();
         } );*/
-</script>
+    </script>
 @endsection

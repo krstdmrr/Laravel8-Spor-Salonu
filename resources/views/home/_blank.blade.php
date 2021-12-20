@@ -1,8 +1,8 @@
 @extends('layouts.home')
 
-@section('title', 'Blank Page')
-
-@section('content')
+@section('title', 'Contact-'. $setting->title)
+@section('description'){{$setting->description}} @endsection
+@section('keywords',$setting->keywords)
     <!-- bradcam_area -->
     <div class="bradcam_area">
         <div class="single_bradcam  d-flex align-items-center bradcam_bg_2 overlay">

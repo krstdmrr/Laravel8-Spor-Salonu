@@ -351,12 +351,13 @@ h3 {
 .owl-carousel .owl-nav div.owl-next i {
   position: relative;
   right: 0;
+    top:50px;
 }
 
 /* line 261, ../../Arafath/CL/Cl November/227. Health _ Fitness/HTML/scss/theme-default.scss */
 .owl-carousel .owl-nav div.owl-prev i {
   position: relative;
-  top: 0px;
+  top: 50px;
 }
 
 /* line 271, ../../Arafath/CL/Cl November/227. Health _ Fitness/HTML/scss/theme-default.scss */
