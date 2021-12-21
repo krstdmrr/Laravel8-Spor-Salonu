@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title','Product List')
+@section('title','Memberships List')
 @section('content')
     <!-- MAIN CONTENT-->
     <div class="main-content">
@@ -8,19 +8,19 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h3>Products</h3>
+                        <h3>Memberships</h3>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Product</li>
+                            <li class="breadcrumb-item active">Memberships</li>
                         </ol>
                     </div>
                 </div>
                 <div class="au-card m-b-30">
                     <div class="card-header">
-                        <h4 class="card-title">Category List</h4>
-                        <a href="{{route('admin_product_add')}}" type="button" class="btn btn-primary">Add Product</a>
+                        <h4 class="card-title">Memberships List</h4>
+                        <a href="{{route('admin_product_add')}}" type="button" class="btn btn-primary">Add Membership</a>
 
                     </div>
                     <div class="card-body">
@@ -34,6 +34,7 @@
                                     <th>title</th>
                                     <th>Price</th>
                                     <th>Months</th>
+                                    <th>Trainer</th>
                                     <th>Status</th>
                                     <th>Image</th>
                                     <th>Image Gallery</th>
@@ -49,6 +50,7 @@
                                         <td>{{$rs->title}}</td>
                                         <td>{{$rs->price}}</td>
                                         <td>{{$rs->months}}</td>
+                                        <td>{{$rs->trainer}}</td>
                                         <td>{{$rs->status}}</td>
                                         <td>
                                             @if($rs->image)

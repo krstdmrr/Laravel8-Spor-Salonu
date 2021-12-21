@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Image;
 use App\Models\Message;
 use App\Models\Product;
 use App\Models\Setting;
@@ -25,7 +26,7 @@ class HomeController extends Controller
     {
         $setting = Setting::first();
         $slider= Product::select('id','title','image','price','slug')->limit(4)->get();
-        $daily= Product::select('id','title','image','price','slug')->limit(3)->inRandomOrder()->get();
+        $daily= Product::select('id','title','image','price','months','slug')->limit(3)->inRandomOrder()->get();
 
         //print_r($daily);
         //exit();
@@ -41,8 +42,10 @@ class HomeController extends Controller
     public function product($id,$slug)
     {
         $data = Product::find($id);
-        print_r($data);
-        exit();
+        $datalist= Image::where('product_id',$id)->get();
+        //print_r($data);
+        //exit();
+        return view('home.product_detail',['data'=>$data,'datalist'=>$datalist]);
     }
     public function addtocart($id)
     {

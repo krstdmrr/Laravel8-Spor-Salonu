@@ -54,6 +54,10 @@
                                             <label>Months</label>
                                             <input type="number" name="months" value="{{$data->months}}" class="form-control">
                                         </div>
+                                    <div class="form-group">
+                                            <label>Trainer</label>
+                                            <input type="text" name="trainer" value="{{$data->trainer}}" class="form-control">
+                                        </div>
                                         <div class="form-group">
                                             <label>Details</label>
                                             <textarea class="form-control" id="summary-ckeditor" name="detail">{{$data->detail}}</textarea>

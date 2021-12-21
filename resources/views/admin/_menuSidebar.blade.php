@@ -17,7 +17,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{route('admin_products')}}" class="nav-link">
-                        <i class="fas fa-angle-left right"></i>Products
+                        <i class="fas fa-angle-left right"></i>Memberships
 
                     </a>
                 </li>

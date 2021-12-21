@@ -96,16 +96,16 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="single_prising text-center">
                             <div class="prising_header" style="background-image:url('{{ Storage::url($rs->image) }}');background-position: center center;background-size: 400px 400px">
-                                <h3>{{$rs->title}}</h3>
+                                <h3 style="font-size:24px">{{$rs->title}}</h3>
                                 <span>{{$rs->price}}₺</span>
                             </div>
                             <div class="pricing_body" >
                                 <ul>
                                     <li>{{$rs->months}} Months</li>
                                     <li>24h unlimited access</li>
-                                    <li>Trainer Advice</li>
+                                    <li>Trainer: {{$rs->trainer}}</li>
                                     <li class="off-color">Locker + Bathroom</li>
-                                    <li class="off-color">Personal trainer</li>
+                                    <li class="off-color" style="background-color: darkred"><a href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug])}}">Detail</a></li>
                                 </ul>
                             </div>
                             <div class="pricing_btn">

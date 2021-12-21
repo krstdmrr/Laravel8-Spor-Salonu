@@ -52,6 +52,7 @@ class ProductController extends Controller
         $data->user_id= Auth::id();
         $data->price= $request->input('price');
         $data->months= $request->input('months');
+        $data->trainer= $request->input('trainer');
         $data->detail= $request->input('detail');
         $data->image=Storage::putFile('images',$request->file('image'));
 
@@ -104,6 +105,7 @@ class ProductController extends Controller
         $data->user_id= Auth::id();
         $data->price= $request->input('price');
         $data->months= $request->input('months');
+        $data->trainer= $request->input('trainer');
         $data->detail= $request->input('detail');
 
         if($request->file('image')!=null){

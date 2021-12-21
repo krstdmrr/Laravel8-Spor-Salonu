@@ -3,6 +3,7 @@
 @section('title', 'Contact-'. $setting->title)
 @section('description'){{$setting->description}} @endsection
 @section('keywords',$setting->keywords)
+@section('content')
     <!-- bradcam_area -->
     <div class="bradcam_area">
         <div class="single_bradcam  d-flex align-items-center bradcam_bg_2 overlay">

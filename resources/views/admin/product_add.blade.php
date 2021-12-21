@@ -54,6 +54,10 @@
                                             <label>Months</label>
                                             <input type="number" name="months" class="form-control">
                                         </div>
+                                    <div class="form-group">
+                                            <label>Trainer</label>
+                                            <input type="text" name="trainer" class="form-control">
+                                        </div>
                                         <div class="form-group">
                                             <label>Details</label>s
                                             <textarea class="form-control" id="summary-ckeditor" name="detail"></textarea>

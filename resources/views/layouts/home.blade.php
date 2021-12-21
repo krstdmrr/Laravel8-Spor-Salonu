@@ -12,6 +12,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets')}}/img/favicon.png">
     <!-- Place favicon.ico in the root directory -->
 
+
     <!-- CSS here -->
     <link rel="stylesheet" href="{{asset('assets')}}/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{asset('assets')}}/css/owl.carousel.min.css">
