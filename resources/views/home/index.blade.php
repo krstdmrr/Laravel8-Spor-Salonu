@@ -8,27 +8,7 @@
 
 @section('content')
     @include('home._slider')
-    <!-- catagory_area  -->
-    <div class="catagory_area">
-        <div class="container-fluid p-0">
-            <div class="row no-gutters">
-                <div class="col-lg-6 col-md-6">
-                    <div class="single_catagory text-center overlay2 cat_bg_1">
-                        <h3>For Girl</h3>
-                        <p>There are many variations of passages of lorem <br> Ipsum available, but the majority have suffered <br> alteration.</p>
-                        <a href="#" class="boxed-btn3">Join Now</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="single_catagory text-center overlay2 cat_bg_2">
-                        <h3>For Boys</h3>
-                        <p>There are many variations of passages of lorem <br> Ipsum available, but the majority have suffered <br> alteration.</p>
-                        <a href="#" class="boxed-btn3">Join Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!--/ catagory_area  -->
     <!-- features_area_start  -->
     <div class="features_area">
@@ -112,63 +92,28 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_prising text-center">
-                        <div class="prising_header">
-                            <h3>Beginner</h3>
-                            <span>$45/m</span>
-                        </div>
-                        <div class="pricing_body">
-                            <ul>
-                                <li>24h unlimited access</li>
-                                <li>Trainer Advice</li>
-                                <li class="off-color">Locker + Bathroom</li>
-                                <li class="off-color">Personal trainer</li>
-                            </ul>
-                        </div>
-                        <div class="pricing_btn">
-                            <a href="#" class="boxed-btn3">Join Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_prising text-center">
-                        <div class="prising_header">
-                            <h3>Expert</h3>
-                            <span>$45/m</span>
-                        </div>
-                        <div class="pricing_body">
-                            <ul>
-                                <li>24h unlimited access</li>
-                                <li>Trainer Advice</li>
-                                <li class="off-color">Locker + Bathroom</li>
-                                <li class="off-color">Personal trainer</li>
-                            </ul>
-                        </div>
-                        <div class="pricing_btn">
-                            <a href="#" class="boxed-btn3">Join Now</a>
+                @foreach($daily as $rs)
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single_prising text-center">
+                            <div class="prising_header" style="background-image:url('{{ Storage::url($rs->image) }}');background-position: center center;background-size: 400px 400px">
+                                <h3>{{$rs->title}}</h3>
+                                <span>{{$rs->price}}₺</span>
+                            </div>
+                            <div class="pricing_body" >
+                                <ul>
+                                    <li>{{$rs->months}} Months</li>
+                                    <li>24h unlimited access</li>
+                                    <li>Trainer Advice</li>
+                                    <li class="off-color">Locker + Bathroom</li>
+                                    <li class="off-color">Personal trainer</li>
+                                </ul>
+                            </div>
+                            <div class="pricing_btn">
+                                <a href="{{route('addtocart',['id'=>$rs->id])}}" class="boxed-btn3">Join Now</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_prising text-center">
-                        <div class="prising_header">
-                            <h3>Pro</h3>
-                            <span>$45/m</span>
-                        </div>
-                        <div class="pricing_body">
-                            <ul>
-                                <li>24h unlimited access</li>
-                                <li>Trainer Advice</li>
-                                <li class="off-color">Locker + Bathroom</li>
-                                <li class="off-color">Personal trainer</li>
-                            </ul>
-                        </div>
-                        <div class="pricing_btn">
-                            <a href="#" class="boxed-btn3">Join Now</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
