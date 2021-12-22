@@ -16,12 +16,16 @@
                             </div>
                         </div>
                         <div class="col-xl-2 col-lg-2 main-menu">
-                             <form action="{{route('getproduct')}}" methos="post">
-                                 @csrf
-                                 @livewire('search')
-                                 <button type="submit" ><i class="fa fa-search"></i></button>
-                             </form>
-                            @livewireScripts
+                            <form action="{{route('getproduct')}}" methos="post">
+                                @csrf
+                                @livewire('search')
+                                <div class="input-group-append">
+                                    <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+                                </div>
+                            </form>
+                            @section('footerjs')
+                                @livewireScripts
+                            @endsection
                         </div>
                         <div class="col-xl-5 col-lg-7">
                             <div class="main-menu  d-none d-lg-block">

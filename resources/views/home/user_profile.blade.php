@@ -26,7 +26,7 @@
     </div>
     <div >
         <div class="container" >
-            <div class="row align-items-lg-start">
+            <div class="row blog_left_sidebar">
                 <div class="col-md-2">
                     @include('home.usermenu')
                 </div>

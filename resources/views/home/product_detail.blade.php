@@ -44,7 +44,7 @@
 
         }
 
-        .btn {
+        .btnn {
             position: absolute;
             width: 60px;
             height: 60px;
@@ -60,7 +60,7 @@
             transition: background-color 0.2s ease;
         }
 
-        .btn:hover {
+        .btnn:hover {
             background-color: rgba(19, 19, 19, 0.829);
         }
 
@@ -137,8 +137,8 @@
                                 @endforeach
                             </div>
                             <div class="controllers">
-                                <button class="btn prevBtn"><i class="fa fa-chevron-left"></i></button>
-                                <button class="btn nextBtn"><i class="fa fa-chevron-right"></i></button>
+                                <button class="btnn prevBtn"><i class="fa fa-chevron-left"></i></button>
+                                <button class="btnn nextBtn"><i class="fa fa-chevron-right"></i></button>
                             </div>
 
                             <div class="navigator"></div>
@@ -153,6 +153,20 @@
                     <h4>{{$data->description}}</h4>
                     <h3>Months: {{$data->months}}</h3>
                     <h3>Trainer:{{$data->trainer}}</h3>
+                    <div>
+                        @php
+                            $avgrev = \App\Http\Controllers\HomeController::avrgreview($data->id);
+                            $countreview = \App\Http\Controllers\HomeController::countreview($data->id);
+                        @endphp
+                        <div>
+                            <i class="fa fa-star @if ($avgrev<1) fa fa-star-o @endif"></i>
+                            <i class="fa fa-star @if ($avgrev<2) fa fa-star-o @endif"></i>
+                            <i class="fa fa-star @if ($avgrev<3) fa fa-star-o @endif"></i>
+                            <i class="fa fa-star @if ($avgrev<4) fa fa-star-o @endif"></i>
+                            <i class="fa fa-star @if ($avgrev<5) fa fa-star-o @endif"></i>
+                        </div>
+                        <a href="#">{{$countreview}} Review(s) {{$avgrev}} / Add Review</a>
+                    </div>
                     <h3>Price:{{$data->price}}</h3>
 
                     <div class="pricing_btn">
@@ -161,11 +175,60 @@
 
                 </div>
             </div>
-            <div class="row">
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active" id="nav-detail-tab" data-toggle="tab" href="#nav-detail"
+                       role="tab" aria-controls="nav-detail"
+                       aria-selected="true">Detail</a>
+                    <a class="nav-item nav-link" id="nav-com-tab" data-toggle="tab" href="#nav-com" role="tab"
+                       aria-controls="nav-com"
+                       aria-selected="false">Comments ({{$countreview}})</a>
+                </div>
+            </nav>
+            <div class="tab-content pl-3 pt-2" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-detail" role="tabpanel" aria-labelledby="nav-detail-tab">
+                    {!! $data->detail !!}
+                </div>
+                <div class="tab-pane fade" id="nav-com" role="tabpanel" aria-labelledby="nav-com-tab">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="comment-list">
+                                @foreach($review as $rs)
+                                    <div class="single-comment justify-content-between d-flex">
+                                        <div class="user justify-content-between d-flex">
+                                            <div class="thumb">
+                                                <img src="img/comment/comment_3.png" alt="">
+                                            </div>
+                                            <div class="desc">
+                                                <p class="comment">
+                                                    {{$rs->review}}
+                                                </p>
+                                                <div class="d-flex justify-content-between">
+                                                    <div class="d-flex align-items-center">
+                                                        <h5>
+                                                            <a href="#">{{$rs->user->name}}</a>
+                                                        </h5>
+                                                        <p class="date">{{$rs->created_at}}</p>
+                                                        <i class="fa fa-star @if ($rs->rate<1) fa fa-star-o @endif"></i>
+                                                        <i class="fa fa-star @if ($rs->rate<2) fa fa-star-o @endif"></i>
+                                                        <i class="fa fa-star @if ($rs->rate<3) fa fa-star-o @endif"></i>
+                                                        <i class="fa fa-star @if ($rs->rate<4) fa fa-star-o @endif"></i>
+                                                        <i class="fa fa-star @if ($rs->rate<5) fa fa-star-o @endif"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
 
-
-                <h3>Description</h3><br>
-                {!!$data->detail!!}
+                        <div class="comment-form col-md-6">
+                            <h4>Leave a Reply</h4>
+                            @livewire('review',['id'=>$data->id])
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

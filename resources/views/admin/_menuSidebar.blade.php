@@ -2,7 +2,7 @@
 <aside class="menu-sidebar d-none d-lg-block">
     <div class="logo">
         <a href="{{route('admin_home')}}">
-            <img src="{{asset('assets')}}/admin/images/icon/logo.png" alt="Cool Admin" />
+            <img src="{{asset('assets')}}/admin/images/icon/logo.png" alt="Cool Admin"/>
         </a>
     </div>
     <div class="menu-sidebar__content js-scrollbar1">
@@ -25,6 +25,11 @@
                     <a href="{{route('admin_message')}}" class="nav-link">
                         <i class="fas fa-angle-left right"></i>Contact Messages
 
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('admin_review')}}" class="nav-link">
+                        <i class="fas fa-angle-left right"></i>Reviews
                     </a>
                 </li>
                 <li class="nav-item">

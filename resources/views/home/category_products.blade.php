@@ -37,11 +37,22 @@
                                 <span>{{$rs->price}}₺</span>
                             </div>
                             <div class="pricing_body" >
+                                @php
+                                    $avgrev = \App\Http\Controllers\HomeController::avrgreview($rs->id);
+                                    $countreview = \App\Http\Controllers\HomeController::countreview($rs->id);
+                                @endphp
                                 <ul>
                                     <li>{{$rs->months}} Months</li>
                                     <li>24h unlimited access</li>
                                     <li>Trainer: {{$rs->trainer}}</li>
-                                    <li class="off-color">Locker + Bathroom</li>
+                                    <li><li> <div>
+                                            <i class="fa fa-star @if ($avgrev<1) fa fa-star-o @endif"></i>
+                                            <i class="fa fa-star @if ($avgrev<2) fa fa-star-o @endif"></i>
+                                            <i class="fa fa-star @if ($avgrev<3) fa fa-star-o @endif"></i>
+                                            <i class="fa fa-star @if ($avgrev<4) fa fa-star-o @endif"></i>
+                                            <i class="fa fa-star @if ($avgrev<5) fa fa-star-o @endif"></i>
+                                            <i>({{$countreview}})</i>
+                                        </div></li></li>
                                     <li class="off-color" style="background-color: darkred"><a href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug])}}">Detail</a></li>
                                 </ul>
                             </div>

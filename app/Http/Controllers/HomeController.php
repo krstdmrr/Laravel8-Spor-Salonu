@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Image;
 use App\Models\Message;
 use App\Models\Product;
+use App\Models\Review;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,11 +23,18 @@ class HomeController extends Controller
         return Setting::first();
     }
 
+    public static function countreview($id){
+        return Review::where('product_id',$id)->count();
+    }
+    public static function avrgreview($id){
+        return Review::where('product_id',$id)->average('rate');
+    }
+
     public function index()
     {
         $setting = Setting::first();
         $slider = Product::select('id', 'title', 'image', 'price', 'slug')->limit(4)->get();
-        $daily = Product::select('id', 'title', 'image', 'price', 'months', 'slug')->limit(3)->inRandomOrder()->get();
+        $daily = Product::select('id', 'title', 'image', 'price', 'months', 'slug','trainer')->limit(3)->inRandomOrder()->get();
 
         //print_r($daily);
         //exit();
@@ -43,9 +51,10 @@ class HomeController extends Controller
     {
         $data = Product::find($id);
         $datalist = Image::where('product_id', $id)->get();
+        $review = Review::where('product_id', $id)->get();
         //print_r($data);
         //exit();
-        return view('home.product_detail', ['data' => $data, 'datalist' => $datalist]);
+        return view('home.product_detail', ['data' => $data, 'datalist' => $datalist,'review'=>$review]);
     }
 
     public function getproduct(Request $request)
