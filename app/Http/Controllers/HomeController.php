@@ -25,42 +25,60 @@ class HomeController extends Controller
     public function index()
     {
         $setting = Setting::first();
-        $slider= Product::select('id','title','image','price','slug')->limit(4)->get();
-        $daily= Product::select('id','title','image','price','months','slug')->limit(3)->inRandomOrder()->get();
+        $slider = Product::select('id', 'title', 'image', 'price', 'slug')->limit(4)->get();
+        $daily = Product::select('id', 'title', 'image', 'price', 'months', 'slug')->limit(3)->inRandomOrder()->get();
 
         //print_r($daily);
         //exit();
-        $data= [
+        $data = [
             'setting' => $setting,
             'slider' => $slider,
             'daily' => $daily,
-            'page'=>'home'];
+            'page' => 'home'];
 
-        return view('home.index',$data);
+        return view('home.index', $data);
     }
 
-    public function product($id,$slug)
+    public function product($id, $slug)
     {
         $data = Product::find($id);
-        $datalist= Image::where('product_id',$id)->get();
+        $datalist = Image::where('product_id', $id)->get();
         //print_r($data);
         //exit();
-        return view('home.product_detail',['data'=>$data,'datalist'=>$datalist]);
+        return view('home.product_detail', ['data' => $data, 'datalist' => $datalist]);
     }
+
+    public function getproduct(Request $request)
+    {
+        $search = $request->input('search');
+        $count = Product::where('title', 'like', '%' . $search . '%')->get()->count();
+        if ($count == 1) {
+            $data = Product::where('title', 'like', '%' . $search . '%')->first();
+            return redirect()->route('product', ['id' => $data->id, 'slug' => $data->slug]);
+        } else {
+            return redirect()->route('productlist', ['search' => $search]);
+        }
+    }
+        public function productlist($search){
+        $datalist=Product::where('title','like','%'.$search.'%')->get();
+        return view('home.search_products',['search'=>$search,'datalist'=>$datalist]);
+        }
+
     public function addtocart($id)
     {
         $data = Product::find($id);
         print_r($data);
         exit();
     }
-    public function categoryproducts($id,$slug)
-{
-    $datalist = Product::where('category_id',$id)->get();
-    $data=Category::find($id);
-    //print_r($data);
-    //exit();
-    return view('home.category_products',['data'=>$data,'datalist'=>$datalist]);
-}
+
+    public function categoryproducts($id, $slug)
+    {
+        $datalist = Product::where('category_id', $id)->get();
+        $data = Category::find($id);
+        //print_r($data);
+        //exit();
+        return view('home.category_products', ['data' => $data, 'datalist' => $datalist]);
+    }
 
     public function aboutus()
     {
@@ -89,6 +107,7 @@ class HomeController extends Controller
         $setting = Setting::first();
         return view('home.contact', ['setting' => $setting]);
     }
+
     public function sendmessage(Request $request)
     {
         $data = new Message;
@@ -96,7 +115,7 @@ class HomeController extends Controller
         $data->email = $request->input('email');
         $data->phone = $request->input('phone');
         $data->subject = $request->input('subject');
-        $data->message =$request->input('message');
+        $data->message = $request->input('message');
         $data->save();
 
         return redirect()->route('home');
