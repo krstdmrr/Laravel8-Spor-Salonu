@@ -33,6 +33,11 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{route('admin_faq')}}" class="nav-link">
+                        <i class="fas fa-angle-left right"></i>FAQ
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{route('admin_setting')}}" class="nav-link">
                         <i class="fas fa-circle text-danger"></i>Settings
 

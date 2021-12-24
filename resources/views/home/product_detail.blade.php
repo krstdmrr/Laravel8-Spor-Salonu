@@ -152,7 +152,7 @@
                     <h3>{{$data->title}}</h3>
                     <h4>{{$data->description}}</h4>
                     <h3>Months: {{$data->months}}</h3>
-                    <h3>Trainer:{{$data->trainer}}</h3>
+                    <h3>Trainer: {{$data->trainer}}</h3>
                     <div>
                         @php
                             $avgrev = \App\Http\Controllers\HomeController::avrgreview($data->id);
@@ -224,7 +224,7 @@
                         </div>
 
                         <div class="comment-form col-md-6">
-                            <h4>Leave a Reply</h4>
+                            <h4>Leave a Comment</h4>
                             @livewire('review',['id'=>$data->id])
                         </div>
                     </div>
