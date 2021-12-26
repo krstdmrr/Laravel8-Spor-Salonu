@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -108,6 +109,15 @@ Route::middleware('auth')->prefix('user')->namespace('user')->group(function () 
 
     Route::get('/profile',[UserController::class, 'index'])->name('userprofile');
 
+    Route::prefix('order')->group(function (){
+       Route::get('/',[OrderController::class,'index'])->name('user_orders');
+       Route::get('/create',[OrderController::class,'create'])->name('user_order_add');
+       Route::post('/store',[OrderController::class,'store'])->name('user_order_store');
+       Route::get('/edit/{id}',[OrderController::class,'edit'])->name('user_order_edit');
+       Route::post('/update/{id}',[OrderController::class,'update'])->name('user_order_update');
+       Route::get('/delete/{id}',[OrderController::class,'destroy'])->name('user_order_delete');
+       Route::get('/show/',[OrderController::class,'show'])->name('user_order_show');
+    });
 });
 
 Route::get('/admin/login',[HomeController::class, 'login'])->name('admin_login');

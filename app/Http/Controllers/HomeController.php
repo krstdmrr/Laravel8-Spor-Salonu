@@ -77,8 +77,7 @@ class HomeController extends Controller
     public function addtocart($id)
     {
         $data = Product::find($id);
-        print_r($data);
-        exit();
+        return view('home.user_order_add',['data'=>$data]);
     }
 
     public function categoryproducts($id, $slug)

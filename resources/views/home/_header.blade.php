@@ -81,9 +81,7 @@
                                         <li><a href="{{route('myprofile')}}"><i class="fa fa-user-o text-white"> My
                                                     Account</i></a>
                                         </li>
-                                        <li><a href="#"><i class="fa fa-heart-o text-white"> My Wishlist</i></a>
-                                        </li>
-                                        <li><a href="#"><i class="fa fa-check text-white"> Checklist</i></a>
+                                        <li><a href="{{route('user_orders')}}"><i class="fa fa-check text-white"> My Orders</i></a>
                                         </li>
                                         <li><a href="{{route('logout')}}"><i class="fa fa-user-plus text-white">
                                                     Logout</i></a>
