@@ -61,12 +61,10 @@
                                             <option>False</option>
                                         </select>
                                         </div>
-
-                                    <div class="card-footer">
                                         <button type="submit" class="btn btn-primary btn-sm">
                                             <i class="fa fa-dot-circle-o"></i> Update Category
                                         </button>
-                                    </div>
+
                                 </form>
                             </div>
                         </div>

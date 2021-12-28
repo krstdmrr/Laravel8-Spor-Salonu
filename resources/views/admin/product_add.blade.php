@@ -81,12 +81,9 @@
                                             <option>True</option>
                                         </select>
                                         </div>
-                                    <div class="card-footer">
                                         <button type="submit" class="btn btn-primary btn-sm">
                                             <i class="fa fa-dot-circle-o"></i> Add Product
                                         </button>
-
-                                    </div>
                                 </form>
                             </div>
                         </div>

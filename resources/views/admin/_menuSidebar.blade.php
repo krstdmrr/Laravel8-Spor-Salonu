@@ -46,23 +46,22 @@
 
                 <li class="active has-sub">
                     <a class="js-arrow" href="#">
-                        <i class="fas fa-tachometer-alt"></i>Dashboard</a>
-                    <ul class="list-unstyled navbar__sub-list js-sub-list">
-
-
-                    </ul>
+                        <i class="fas fa-tachometer-alt"></i>Orders</a>
                     <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
-                            <a href="index.html">Dashboard 1</a>
+                            <a href="{{route('admin_orders')}}">All Orders</a>
                         </li>
                         <li>
-                            <a href="index2.html">Dashboard 2</a>
+                            <a href="{{route('admin_order_list',['status'=>'new'])}}">New Orders</a>
                         </li>
                         <li>
-                            <a href="index3.html">Dashboard 3</a>
+                            <a href="{{route('admin_order_list',['status'=>'accepted'])}}">Accepted Orders</a>
                         </li>
                         <li>
-                            <a href="index4.html">Dashboard 4</a>
+                            <a href="{{route('admin_order_list',['status'=>'canceled'])}}">Canceled Orders</a>
+                        </li>
+                        <li>
+                            <a href="{{route('admin_order_list',['status'=>'completed'])}}">Completed Orders</a>
                         </li>
                     </ul>
                 </li>

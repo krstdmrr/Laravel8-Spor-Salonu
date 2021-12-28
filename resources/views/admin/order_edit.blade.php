@@ -20,13 +20,13 @@
 <link href="{{asset('assets')}}/admin/css/theme.css" rel="stylesheet" media="all">
 <div class="au-card m-b-30">
     <div class="card-header">
-        <h4 class="card-title">Message Detail</h4>
+        <h4 class="card-title">Order Detail</h4>
         @include('home.message')
     </div>
     <div class="card-body">
         <div class="card">
             <div class="card-body card-block">
-                <form role="form" action="{{route('admin_message_update',['id'=>$data->id])}}" method="post"
+                <form role="form" action="{{route('admin_order_update',['id'=>$data->id])}}" method="post"
                       enctype="multipart/form-data" class="form-horizontal">
                     @csrf
                     <table id="table_id" class="table table-borderless table-data3"
@@ -38,23 +38,58 @@
                         </tr>
                         <tr>
                             <th>Name</th>
-                            <td>{{$data->name}}</td>
+                            <td>{{$data->user->name}}</td>
                         </tr>
                         <tr>
-                            <th>Email</th>
-                            <td>{{$data->email}}</td>
+                            <th>Product</th>
+                            <td>{{$data->product->title}}</td>
                         </tr>
                         <tr>
-                            <th>Phone</th>
-                            <td>{{$data->phone}}</td>
+                            <th>Start Date</th>
+                            <td>{{$data->Startdate}}</td>
                         </tr>
                         <tr>
-                            <th>Subject</th>
-                            <td>{{$data->subject}}</td>
+                            <th>Finish Date</th>
+                            <td>{{$data->Finishdate}}</td>
                         </tr>
                         <tr>
-                            <th>Message</th>
-                            <td>{{$data->message}}</td>
+                            <th>Months</th>
+                            <td>{{$data->months}}</td>
+                        </tr>
+                        <tr>
+                            <th>Price</th>
+                            <td>{{$data->price}}</td>
+                        </tr>
+                        <tr>
+                            <th>Trainer</th>
+                            <td>{{$data->trainer}}</td>
+                        </tr>
+                        <tr>
+                            <th>Total</th>
+                            <td>{{$data->total}}</td>
+                        </tr>
+                        <tr>
+                            <th>Payment</th>
+                            <td>{{$data->payment}}</td>
+                        </tr>
+                        <tr>
+                            <th>Created Date</th>
+                            <td>{{$data->created_at}}</td>
+                        </tr>
+                        <tr>
+                            <th>Updated Date</th>
+                            <td>{{$data->updated_at}}</td>
+                        </tr>
+                        <tr>
+                            <th>Status</th>
+                            <td>
+                                <select class="form-control " name="status">
+                                    <option selected>{{$data->status}}</option>
+                                    <option>Accepted</option>
+                                    <option>Canceled</option>
+                                    <option>Completed</option>
+                                </select>
+                            </td>
                         </tr>
                         <tr>
                             <th>Admin Note</th>
@@ -63,11 +98,12 @@
                         </tr>
                         <tr>
                             <td></td>
-                            <td><button type="submit" class="btn btn-primary btn-sm">
-                                    <i class="fa fa-dot-circle-o"></i> Update Message
-                                </button></td>
+                            <td> <button type="submit" class="btn btn-primary btn-sm">
+                                    <i class="fa fa-dot-circle-o"></i> Update Order
+                                </button> </td>
                         </tr>
                     </table>
+
                 </form>
                 <div class="card-footer">
 

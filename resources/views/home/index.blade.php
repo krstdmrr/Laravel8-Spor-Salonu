@@ -135,7 +135,7 @@
     <div class="gallery_area">
         <div class="single_gallery big_img">
             <div class="hover_pop">
-                <a class="popup-image" href="img/gallery/1.png">
+                <a class="popup-image" href="{{asset('assets')}}/img/gallery/1.png">
                     <i class="ti-plus"></i>
                 </a>
             </div>
@@ -143,7 +143,7 @@
         </div>
         <div class="single_gallery big_img">
             <div class="hover_pop">
-                <a class="popup-image" href="img/gallery/2.png">
+                <a class="popup-image" href="{{asset('assets')}}/img/gallery/2.png">
                     <i class="ti-plus"></i>
                 </a>
             </div>
@@ -151,7 +151,7 @@
         </div>
         <div class="single_gallery small_img">
             <div class="hover_pop">
-                <a class="popup-image" href="img/gallery/3.png">
+                <a class="popup-image" href="{{asset('assets')}}/img/gallery/3.png">
                     <i class="ti-plus"></i>
                 </a>
             </div>
@@ -159,7 +159,7 @@
         </div>
         <div class="single_gallery small_img">
             <div class="hover_pop">
-                <a class="popup-image" href="img/gallery/4.png">
+                <a class="popup-image" href="{{asset('assets')}}/img/gallery/4.png">
                     <i class="ti-plus"></i>
                 </a>
             </div>
@@ -167,7 +167,7 @@
         </div>
         <div class="single_gallery big_img">
             <div class="hover_pop">
-                <a class="popup-image" href="img/gallery/5.png">
+                <a class="popup-image" href="{{asset('assets')}}/img/gallery/5.png">
                     <i class="ti-plus"></i>
                 </a>
             </div>
@@ -175,7 +175,7 @@
         </div>
         <div class="single_gallery big_img">
             <div class="hover_pop">
-                <a class="popup-image" href="img/gallery/6.png">
+                <a class="popup-image" href="{{asset('assets')}}/img/gallery/6.png">
                     <i class="ti-plus"></i>
                 </a>
             </div>

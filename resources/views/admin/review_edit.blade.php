@@ -8,7 +8,7 @@
 <!-- Bootstrap CSS-->
 <link href="{{asset('assets')}}/admin/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
 
-<!-- Vendor CSS-->
+<!-- Vendor CSS-->S
 <link href="{{asset('assets')}}/admin/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
 <link href="{{asset('assets')}}/admin/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet"
       media="all">
