@@ -50,18 +50,9 @@
                                                 @endforeach
                                             </ul>
                                         </li>
-                                        <li><a href={{route('gallery')}}>Gallery</a></li>
                                         <li><a href={{route('references')}}>References</a>
-                                            <ul class="submenu">
-
-                                                <li><a href="elements.html">elements</a></li>
-                                            </ul>
                                         </li>
                                         <li><a href={{route('faq')}}>Faq</a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">blog</a></li>
-                                                <li><a href="single-blog.html">single-blog</a></li>
-                                            </ul>
                                         </li>
                                         <li><a href={{route('contact')}}>Contact</a></li>
                                     </ul>
@@ -74,14 +65,15 @@
                                     <a href="#" class="dropdown-toggle text-white" data-toggle="dropdown" role="button"
                                        aria-expanded="true">
                                         <strong class="text-uppercase text-white"><i
-                                                class="fa fa-user-o white_border white_border"></i> {{Auth::user()->name}}
+                                                class="fa fa-user-o white_border white_border"></i> {{Auth::user()->name}} {{Auth::user()->roles->pluck('name')}}
                                         </strong>
                                     </a>
                                     <ul class="dropdown-menu" style="background-color: black;">
                                         <li><a href="{{route('myprofile')}}"><i class="fa fa-user-o text-white"> My
                                                     Account</i></a>
                                         </li>
-                                        <li><a href="{{route('user_orders')}}"><i class="fa fa-check text-white"> My Orders</i></a>
+                                        <li><a href="{{route('user_orders')}}"><i class="fa fa-check text-white"> My
+                                                    Orders</i></a>
                                         </li>
                                         <li><a href="{{route('logout')}}"><i class="fa fa-user-plus text-white">
                                                     Logout</i></a>
