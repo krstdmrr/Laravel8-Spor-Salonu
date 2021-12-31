@@ -65,7 +65,7 @@
                                     <a href="#" class="dropdown-toggle text-white" data-toggle="dropdown" role="button"
                                        aria-expanded="true">
                                         <strong class="text-uppercase text-white"><i
-                                                class="fa fa-user-o white_border white_border"></i> {{Auth::user()->name}} {{Auth::user()->roles->pluck('name')}}
+                                                class="fa fa-user-o white_border white_border"></i> {{Auth::user()->name}}
                                         </strong>
                                     </a>
                                     <ul class="dropdown-menu" style="background-color: black;">

@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title','Review List')
+@section('title','Memberships List')
 @section('content')
     <!-- MAIN CONTENT-->
     <div class="main-content">
@@ -8,18 +8,21 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h3>Reviews</h3>
+                        <h3>Memberships</h3>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Reviews</li>
+                            <li class="breadcrumb-item active">Memberships</li>
                         </ol>
                     </div>
                 </div>
                 <div class="au-card m-b-30">
                     <div class="card-header">
-                        @include('home.message')
+                        <h4 class="card-title">Memberships List</h4>
+                        <a href="{{route('admin_product_add')}}" type="button" class="btn btn-primary">Add
+                            Membership</a>
+
                     </div>
                     <div class="card-body">
                         <!-- DATA TABLE-->
@@ -28,45 +31,44 @@
                                 <thead>
                                 <tr>
                                     <th>Id</th>
+                                    <th></th>
                                     <th>Name</th>
-                                    <th>Product</th>
-                                    <th>Subject</th>
-                                    <th>Review</th>
-                                    <th>Rate</th>
-                                    <th>Status</th>
-                                    <th>Date</th>
-                                    <th colspan="3">Actions</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Address</th>
+                                    <th>Roles</th>
+                                    <th style="..." colspan="2">Actions</th>
                                 </tr>
                                 </thead>
                                 <tbody>
+                                @foreach($datalist as $rs)
 
-                                @foreach($datalist as  $rs)
                                     <tr>
                                         <td>{{$rs->id}}</td>
                                         <td>
-                                            <a href="{{route('admin_user_show',['id'=>$rs->user->id])}}"
-                                               onclick="return !window.open(this.href,'','top=50 left=100 width=800,height=600')">
-                                                {{$rs->user->name}}</a>
+                                            @if($rs->profile_photo_path)
+                                                <img src="{{Storage::url($rs->profile_photo_path)}}" height="50"
+                                                     style="border-radius: 10px" alt="">
+                                            @endif
                                         </td>
-                                        <td>
-                                            <a href="{{route('product',['id'=>$rs->product->id,'slug'=>$rs->product->slug])}}"
-                                               target="_blank">
-                                                {{$rs->product->title}}
-                                            </a></td>
-                                        <td>{{$rs->subject}}</td>
-                                        <td>{{$rs->review}}</td>
-                                        <td>{{$rs->rate}}</td>
-                                        <td>{{$rs->status}}</td>
-                                        <td>{{$rs->created_at}}</td>
-                                        <td align="center"><a href="{{route('admin_review_show',['id'=>$rs->id])}}"
-                                                              onclick="return !window.open(this.href,'','top=50 left=100 width=800,height=600')"><i
+                                        <td>{{$rs->name}}</td>
+                                        <td>{{$rs->email}}</td>
+                                        <td>{{$rs->phone}}</td>
+                                        <td>{{$rs->address}}</td>
+                                        <td>@foreach($rs->roles as $row)
+                                                {{$row->name}},
+                                            @endforeach
+                                            <a href="{{route('admin_user_roles',['id'=>$rs->id])}}"
+                                               onclick="return !window.open(this.href,'','top=50 left=100 width=800,height=600')"><i class="fas fa-plus-circle"></i></a>
+
+                                        </td>
+                                        <td align="center"><a href="{{route('admin_user_edit',['id'=>$rs->id])}}"><i
                                                     class="fa fa-edit"></i></a></td>
-                                        <td>
-                                            <a href="{{route('admin_review_delete',['id'=>$rs->id])}}"
-                                               onclick="return confirm('delete, are u sure?')"><i
-                                                    class="fa fa-eraser"></i></a>
-                                        </td>
+                                        <td align="center"><a href="{{route('admin_user_delete',['id'=>$rs->id])}}"
+                                                              onclick="return confirm('Delete! Are you sure=!')"><i
+                                                    class="fa fa-eraser"></i></a></td>
                                     </tr>
+
                                 @endforeach
                                 </tbody>
                             </table>
