@@ -81,8 +81,9 @@ class UserController extends Controller
         $data->email = $request->input('email');
         $data->phone = $request->input('phone');
         $data->address = $request->input('address');
-        if ($request->file('image') != null) {
-            $data->profile_photo_path = Storage::putFile('profile_photos', $request > file('image'));
+        if ($request->file('image') != null)
+        {
+            $data->profile_photo_path = Storage::putFile('profile-photos', $request->file('image'));
         }
         $data->save();
         return redirect()->route('admin_users')->with('success', 'User Information Updated');

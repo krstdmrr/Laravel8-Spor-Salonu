@@ -36,7 +36,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('admin_user')}}" class="nav-link">
+                    <a href="{{route('admin_users')}}" class="nav-link">
                         <i class="fas fa-user"></i>User
                     </a>
                 </li>

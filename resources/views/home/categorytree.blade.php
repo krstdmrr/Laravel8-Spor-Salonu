@@ -1,8 +1,8 @@
 @foreach($children as $subcategory)
-    <ul class="list-links">
+    <ul>
         @if(count($subcategory->children))
             <li>{{$subcategory->title}}</li>
-                <ul class="list-links">
+                <ul>
                     @include('home.categorytree',['children'=>$subcategory->children])
                 </ul>
                 <hr>

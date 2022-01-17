@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title','Memberships List')
+@section('title','Users List')
 @section('content')
     <!-- MAIN CONTENT-->
     <div class="main-content">
@@ -8,21 +8,18 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h3>Memberships</h3>
+                        <h3>Users</h3>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Memberships</li>
+                            <li class="breadcrumb-item active">Users</li>
                         </ol>
                     </div>
                 </div>
                 <div class="au-card m-b-30">
                     <div class="card-header">
-                        <h4 class="card-title">Memberships List</h4>
-                        <a href="{{route('admin_product_add')}}" type="button" class="btn btn-primary">Add
-                            Membership</a>
-
+                        <h4 class="card-title">Users List</h4>
                     </div>
                     <div class="card-body">
                         <!-- DATA TABLE-->
@@ -47,8 +44,8 @@
                                         <td>{{$rs->id}}</td>
                                         <td>
                                             @if($rs->profile_photo_path)
-                                                <img src="{{Storage::url($rs->profile_photo_path)}}" height="50"
-                                                     style="border-radius: 10px" alt="">
+                                                <img src="{{Storage::url($rs->profile_photo_path)}}"
+                                                     style="border-radius: 10px;height: 50px;" alt="">
                                             @endif
                                         </td>
                                         <td>{{$rs->name}}</td>
@@ -59,7 +56,8 @@
                                                 {{$row->name}},
                                             @endforeach
                                             <a href="{{route('admin_user_roles',['id'=>$rs->id])}}"
-                                               onclick="return !window.open(this.href,'','top=50 left=100 width=800,height=600')"><i class="fas fa-plus-circle"></i></a>
+                                               onclick="return !window.open(this.href,'','top=50 left=100 width=800,height=600')"><i
+                                                    class="fas fa-plus-circle"></i></a>
 
                                         </td>
                                         <td align="center"><a href="{{route('admin_user_edit',['id'=>$rs->id])}}"><i
@@ -78,7 +76,6 @@
 
                     </div>
                     <div class="card-footer">
-                        footer
                     </div>
                 </div>
             </div>
@@ -91,11 +88,10 @@
 
 @section('footer')
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
-    <script type="text/javascript" charset="utf8"
-            src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
-    <script>/*
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+    <script>
         $(document).ready( function () {
             $('#table_id').DataTable();
-        } );*/
+        } );
     </script>
 @endsection

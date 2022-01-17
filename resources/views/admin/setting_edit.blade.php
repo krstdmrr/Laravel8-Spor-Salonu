@@ -51,7 +51,7 @@
 
                                                 <div class="form-group">
                                                     <label>Title</label>
-                                                    <input type="text" name="title" value="{{$data->title}}" class="form-control">
+                                                    <input type="text" name="title" value="{{$data->title}}" class="form-control" required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Keywords</label>

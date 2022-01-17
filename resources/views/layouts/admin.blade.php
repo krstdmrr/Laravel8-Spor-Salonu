@@ -35,7 +35,7 @@
 </head>
 
 <body class="animsition">
-    <div class="page-wrapper">,
+    <div class="page-wrapper">
         @include('admin._headerMobile')
         @include(('admin._menuSidebar'))
         <div class="page-container">

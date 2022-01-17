@@ -29,15 +29,15 @@
                                     @csrf
                                     <div class="form-group">
                                         <label>Position</label>
-                                        <input type="number" name="position" value="0" class="form-control">
+                                        <input type="number" name="position" value="0" class="form-control" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Question</label>
-                                        <input type="text" name="question" class="form-control">
+                                        <input type="text" name="question" class="form-control" required>
                                     </div>
                                     <div>
                                         <label>Answer</label>s
-                                        <textarea class="form-control" id="answer" name="answer"></textarea>
+                                        <textarea class="form-control" id="answer" name="answer" required></textarea>
                                         <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
                                         <script>
                                             CKEDITOR.replace('answer');
@@ -46,7 +46,7 @@
 
                                     <div class="form-group">
                                         <label>Status</label>
-                                        <select name="status" id="select" class="form-control">
+                                        <select name="status" id="select" class="form-control" required>
                                             <option selected="selected">False</option>
                                             <option>True</option>
                                         </select>

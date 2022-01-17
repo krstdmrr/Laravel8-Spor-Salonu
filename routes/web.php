@@ -31,6 +31,7 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
 Route::get('/product/{id}/{slug}', [HomeController::class, 'product'])->name('product');
 Route::get('/categoryproducts/{id}/{slug}', [HomeController::class, 'categoryproducts'])->name('categoryproducts');
+Route::get('/categoryproduct', [HomeController::class, 'categoryproduct'])->name('categoryproduct');
 Route::get('/addtocart/{id}', [HomeController::class, 'addtocart'])->name('addtocart');
 Route::get('/getproduct', [HomeController::class, 'getproduct'])->name('getproduct');
 Route::get('/productlist/{search}', [HomeController::class, 'productlist'])->name('productlist');
@@ -113,7 +114,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
             Route::get('/show/{id}', [AdminOrderController::class, 'show'])->name('admin_order_show');
         });
         Route::prefix('user')->group(function () {
-            Route::get('/', [AdminUserController::class, 'index'])->name('admin_user');
+            Route::get('/', [AdminUserController::class, 'index'])->name('admin_users');
             Route::post('/create', [AdminUserController::class, 'create'])->name('admin_user_add');
             Route::post('/store', [AdminUserController::class, 'store'])->name('admin_user_store');
             Route::get('/edit/{id}', [AdminUserController::class, 'edit'])->name('admin_user_edit');

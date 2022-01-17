@@ -61,9 +61,7 @@
 
 
                     </div>
-                    <div class="card-footer">
-                        footer
-                    </div>
+                    <div class="card-footer"></div>
                 </div>
             </div>
 

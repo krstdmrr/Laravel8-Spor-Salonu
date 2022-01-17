@@ -22,7 +22,7 @@
                         <h4 class="card-title">Order List</h4>
                     </div>
                     <div class="table-responsive m-b-40">
-                        <table class="table table-borderless table-data3">
+                        <table id="table_id" class="table table-borderless table-data3">
                             <thead>
                             <tr>
                                 <th>Id</th>
@@ -69,7 +69,6 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    footer
                 </div>
             </div>
         </div>
@@ -77,3 +76,14 @@
     </div>
 
 @endsection
+@section('footer')
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8"
+            src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+    <script>
+        $(document).ready( function () {
+            $('#table_id').DataTable();
+        } );
+    </script>
+@endsection
+

@@ -16,11 +16,11 @@
                             </div>
                         </div>
                         <div class="col-xl-2 col-lg-2 main-menu">
-                            <form action="{{route('getproduct')}}" methos="post">
+                            <form class="d-flex align-items-center" action="{{route('getproduct')}}" methos="post">
                                 @csrf
                                 @livewire('search')
                                 <div class="input-group-append">
-                                    <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+                                    <button style="height: 38px" class="btn" type="submit"><i class="fa fa-search"></i></button>
                                 </div>
                             </form>
                             @section('footerjs')
@@ -33,18 +33,16 @@
                                     <ul id="navigation">
                                         <li><a href="{{route('home')}}">home</a></li>
                                         <li><a href={{route('aboutus')}}>about</a></li>
-                                        <li><a href="pricing.html">Memberships <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
+                                        <li><a href="{{route('categoryproduct')}}">Memberships <i class="ti-angle-down"></i></a>
+                                            <ul class="submenu dropdown">
                                                 @foreach($parentCategories as $rs)
-                                                    <li class="dropdown side-dropdown">
-                                                        <a class="dropdown-toggle" data-toggle="dropdown"
-                                                           aria-expanded="true">{{$rs->title}}</a>
-                                                        <div class="sub-menu">
-                                                            <div class="row">
+                                                    <li class="dropdown">
+                                                        <a class="dropdown" data-toggle="dropdown"
+                                                           >{{$rs->title}}</a>
+                                                        <div class="submenu dropdown-menu" style="margin-left: 200px">
                                                                 @if(count($rs->children))
                                                                     @include('home.categorytree',['children'=>$rs->children])
                                                                 @endif
-                                                            </div>
                                                         </div>
                                                     </li>
                                                 @endforeach
@@ -78,6 +76,15 @@
                                         <li><a href="{{route('logout')}}"><i class="fa fa-user-plus text-white">
                                                     Logout</i></a>
                                         </li>
+                                        @php
+                                            $userRoles=Auth::user()->roles->pluck('name');
+                                        @endphp
+                                        @if($userRoles->contains('admin'))
+                                        </li>
+                                        <a href="{{route('admin_home')}}" <i class="fa fa-superpowers text-white">
+                                            Admin Panel</i></a>
+                                        </li>
+                                        @endif
                                     </ul>
                                 @endauth
                                 @guest

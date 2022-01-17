@@ -28,7 +28,7 @@
                                     @csrf
                                         <div class="form-group">
                                             <label>Parent</label>
-                                            <select name="parent_id" id="select" class="form-control">
+                                            <select name="parent_id" id="select" class="form-control required">
                                                 <option value="0" selected="selected">Main Category</option>
                                                 @foreach($datalist as $rs)
                                                 <option value="{{$rs->id}}">{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}</option>
@@ -37,23 +37,23 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Title</label>
-                                            <input type="text" name="title" class="form-control">
+                                            <input type="text" name="title" class="form-control" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Keywords</label>
-                                            <input type="text" name="keywords" class="form-control">
+                                            <input type="text" name="keywords" class="form-control" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Description</label>
-                                            <input type="text" name="description" class="form-control">
+                                            <input type="text" name="description" class="form-control" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Slug</label>
-                                            <input type="text" name="slug" class="form-control">
+                                            <input type="text" name="slug" class="form-control" required>
                                         </div>
                                         <div class="form-group">
                                         <label>Status</label>
-                                        <select name="status" id="select" class="form-control">
+                                        <select name="status" id="select" class="form-control" required>
                                             <option selected="selected">False</option>
                                             <option>True</option>
                                         </select>

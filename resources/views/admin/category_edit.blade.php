@@ -28,7 +28,7 @@
                                     @csrf
                                         <div class="form-group">
                                             <label>Parent</label>
-                                            <select name="parent_id" id="select" class="form-control">
+                                            <select name="parent_id" id="select" class="form-control" required>
                                                 <option value="0" >Main Category</option>
                                                 @foreach($datalist as $rs)
                                                 <option value="{{$rs->id}}" @if($rs->id == $data->parent_id) selected="selected" @endif >
@@ -39,23 +39,23 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Title</label>
-                                            <input type="text" name="title" value="{{$data->title}}" class="form-control">
+                                            <input type="text" name="title" value="{{$data->title}}" class="form-control" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Keywords</label>
-                                            <input type="text" name="keywords" value="{{$data->keywords}}" class="form-control">
+                                            <input type="text" name="keywords" value="{{$data->keywords}}" class="form-control" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Description</label>
-                                            <input type="text" name="description" value="{{$data->description}}" class="form-control">
+                                            <input type="text" name="description" value="{{$data->description}}" class="form-control" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Slug</label>
-                                            <input type="text" name="slug" value="{{$data->slug}}" class="form-control">
+                                            <input type="text" name="slug" value="{{$data->slug}}" class="form-control" required>
                                         </div>
                                         <div class="form-group">
                                         <label>Status</label>
-                                        <select name="status" id="select" class="form-control">
+                                        <select name="status" id="select" class="form-control" required>
                                             <option selected="selected">{{$data->status}}</option>
                                             <option>True</option>
                                             <option>False</option>

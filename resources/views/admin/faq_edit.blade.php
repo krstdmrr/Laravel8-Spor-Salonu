@@ -28,15 +28,15 @@
                                     @csrf
                                     <div class="form-group">
                                         <label>Position</label>
-                                        <input type="number" name="position" value="{{$data->position}}" class="form-control">
+                                        <input type="number" name="position" value="{{$data->position}}" class="form-control" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Question</label>
-                                        <input type="text" name="question" value="{{$data->question}}" class="form-control">
+                                        <input type="text" name="question" value="{{$data->question}}" class="form-control" required>
                                     </div>
                                     <div>
                                         <label>Answer</label>
-                                        <textarea name="answer" >{{$data->answer}}</textarea>
+                                        <textarea name="answer" required >{{$data->answer}}</textarea>
                                         <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
                                         <script>
                                             CKEDITOR.replace('answer');
@@ -44,7 +44,7 @@
                                     </div>
                                         <div class="form-group">
                                         <label>Status</label>
-                                        <select name="status" id="select" class="form-control">
+                                        <select name="status" id="select" class="form-control" required>
                                             <option selected="selected">{{$data->status}}</option>
                                             <option>True</option>
                                             <option>False</option>

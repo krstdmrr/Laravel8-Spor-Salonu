@@ -63,7 +63,7 @@
                         <td>
                             <form role="form" action="{{route('admin_user_role_add',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                                 @csrf
-                                <select name="roleid">
+                                <select class="form-control" name="roleid">
                                     @foreach($datalist as $rs)
                                         <option value="{{$rs->id}}">{{$rs->name}}</option>
                                     @endforeach

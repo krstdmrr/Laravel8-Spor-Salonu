@@ -167,7 +167,7 @@
                         </div>
                         <a href="#">{{$countreview}} Review(s) {{$avgrev}} / Add Review</a>
                     </div>
-                    <h3>Price:{{$data->price}}</h3>
+                    <h3>Price:{{$data->price}}₺</h3>
 
                     <div class="pricing_btn">
                         <a href="{{route('addtocart',['id'=>$data->id])}}" class="boxed-btn3">Join Now</a>
@@ -196,24 +196,25 @@
                                 @foreach($review as $rs)
                                     <div class="single-comment justify-content-between d-flex">
                                         <div class="user justify-content-between d-flex">
-                                            <div class="thumb">
-                                                <img src="img/comment/comment_3.png" alt="">
-                                            </div>
                                             <div class="desc">
                                                 <p class="comment">
                                                     {{$rs->review}}
                                                 </p>
                                                 <div class="d-flex justify-content-between">
-                                                    <div class="d-flex align-items-center">
+                                                    <div class="d-flex align-items-center justify-content-between w-100">
+                                                        <div class="d-flex align-items-center">
                                                         <h5>
                                                             <a href="#">{{$rs->user->name}}</a>
                                                         </h5>
-                                                        <p class="date">{{$rs->created_at}}</p>
-                                                        <i class="fa fa-star @if ($rs->rate<1) fa fa-star-o @endif"></i>
-                                                        <i class="fa fa-star @if ($rs->rate<2) fa fa-star-o @endif"></i>
-                                                        <i class="fa fa-star @if ($rs->rate<3) fa fa-star-o @endif"></i>
-                                                        <i class="fa fa-star @if ($rs->rate<4) fa fa-star-o @endif"></i>
-                                                        <i class="fa fa-star @if ($rs->rate<5) fa fa-star-o @endif"></i>
+                                                        <p class="date pl-2 ">{{$rs->created_at}}</p>
+                                                        </div>
+                                                        <div>
+                                                            <i class="fa fa-star @if ($rs->rate<1) fa fa-star-o @endif"></i>
+                                                            <i class="fa fa-star @if ($rs->rate<2) fa fa-star-o @endif"></i>
+                                                            <i class="fa fa-star @if ($rs->rate<3) fa fa-star-o @endif"></i>
+                                                            <i class="fa fa-star @if ($rs->rate<4) fa fa-star-o @endif"></i>
+                                                            <i class="fa fa-star @if ($rs->rate<5) fa fa-star-o @endif"></i>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>

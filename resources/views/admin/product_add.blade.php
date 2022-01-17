@@ -28,7 +28,7 @@
                                     @csrf
                                     <div class="form-group">
                                         <label>Category</label>
-                                        <select name="category_id" id="select" class="form-control">
+                                        <select name="category_id" id="select" class="form-control" required>
                                             @foreach($datalist as $rs)
                                             <option value="{{$rs->id}}">{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}</option>
                                             @endforeach
@@ -36,31 +36,31 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Title</label>
-                                            <input type="text" name="title" class="form-control">
+                                            <input type="text" name="title" class="form-control" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Keywords</label>
-                                            <input type="text" name="keywords" class="form-control">
+                                            <input type="text" name="keywords" class="form-control" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Description</label>
-                                            <input type="text" name="description" class="form-control">
+                                            <input type="text" name="description" class="form-control" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Price</label>
-                                            <input type="number" name="price" value="0" class="form-control">
+                                            <input type="number" name="price" value="0" class="form-control" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Months</label>
-                                            <input type="number" name="months" class="form-control">
+                                            <input type="number" name="months" class="form-control" required>
                                         </div>
                                     <div class="form-group">
                                             <label>Trainer</label>
-                                            <input type="text" name="trainer" class="form-control">
+                                            <input type="text" name="trainer" class="form-control" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Details</label>s
-                                            <textarea class="form-control" id="summary-ckeditor" name="detail"></textarea>
+                                            <textarea class="form-control" id="summary-ckeditor" name="detail" required></textarea>
                                             <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
                                             <script>
                                                 CKEDITOR.replace( 'summary-ckeditor' );
@@ -68,15 +68,15 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Slug</label>
-                                            <input type="text" name="slug" class="form-control">
+                                            <input type="text" name="slug" class="form-control" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Image</label>
-                                            <input type="file" name="image" class="form-control">
+                                            <input type="file" name="image" class="form-control" required>
                                         </div>
                                         <div class="form-group">
                                         <label>Status</label>
-                                        <select name="status" id="select" class="form-control">
+                                        <select name="status" id="select" class="form-control" required>
                                             <option selected="selected">False</option>
                                             <option>True</option>
                                         </select>

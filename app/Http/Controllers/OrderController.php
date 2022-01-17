@@ -29,6 +29,7 @@ class OrderController extends Controller
      */
     public function create()
     {
+
         return view('home.user_order_add');
     }
 
@@ -51,7 +52,7 @@ class OrderController extends Controller
         //$data->Finishdate= $data->Finishdate->addMonths($months);
         //$data->Finishdate= strtotime("+$months months",$data->Finishdate);
         $data->price = $request->input('price');
-        $data->total = $data->price;
+        $data->total = $request->input('total');
         $data->IP=$_SERVER['REMOTE_ADDR'];
         $data->payment=$request->input('payment');
         $data->trainer=$request->input('trainer');

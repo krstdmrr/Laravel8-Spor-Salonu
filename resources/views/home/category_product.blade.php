@@ -1,8 +1,6 @@
 @extends('layouts.home')
 
-@section('title',$data->title ."Membership Lists")
-@section('description',$data->description)
-@section('keywords',$data->keywords)
+@section('title',"Memberships List")
 @section('content')
     <!-- bradcam_area -->
     <div class="bradcam_area">
@@ -11,7 +9,7 @@
                 <div class="row align-items-center justify-content-center">
                     <div class="col-xl-9">
                         <div class="bradcam_text text-center">
-                            <h3 style="font-size: 125px">Membership</h3>
+                            <h3 style="font-size: 125px">Memberships</h3>
                         </div>
                     </div>
                 </div>
@@ -22,8 +20,7 @@
     <div>
         <ul class="breadcrumb" style="background-color: darkred;border-radius:0.15px;margin-bottom: 0px">
             <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
-            <li class="breadcrumb-item"><a href="{{route('categoryproduct')}}">Membership List</a></li>
-            <li class="breadcrumb-item active">{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($data,$data->title)}}</li>
+            <li class="breadcrumb-item active">Memberships</li>
         </ul>
     </div>
     <div class="priscing_area">

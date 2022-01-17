@@ -1,7 +1,8 @@
 @extends('layouts.home')
-
 @section('title', 'Order Membership')
-
+@php
+$total=0;
+@endphp
 @section('content')
     <!-- bradcam_area -->
     <div class="bradcam_area">
@@ -24,6 +25,12 @@
             <li class="breadcrumb-item active">Order</li>
         </ul>
     </div>
+    @php
+    if($data->months>=3)
+        $total += $data->price*$data->months*0.70;
+    else
+        $total += $data->price*$data->months;
+    @endphp
     <div class="container">
         <div class="row">
             <div class="col-md-6">
@@ -42,12 +49,13 @@
                         </div>
                         <div class="form-group  ">
                             <label>Start Date</label>
-                            <input class="form-control" type="date" name="Startdate">
+                            <input class="form-control" type="date" name="Startdate" min={{$dateNow}} required>
                         </div>
                         <div class="form-group  ">
                             <input type="hidden" name="price" value="{{$data->price}}">
-                        </div> <div class="form-group  ">
-                            <input type="" name="product_id" value="{{$data->id}}">
+                        </div>
+                        <div class="form-group  ">
+                            <input type="hidden" name="product_id" value="{{$data->id}}">
                         </div>
 
                         <div class="form-group">
@@ -58,6 +66,10 @@
 
                             </select>
                         </div>
+
+                        <div class="form-group  ">
+                            <input type="hidden" name="total" value="{{$total}}">
+                        </div>
                         <div class="pricing_btn">
                             <button type="submit" class="boxed-btn3">Join Now</button>
                         </div>
@@ -66,10 +78,13 @@
 
                 </form>
             </div>
+
             <div class="col-md-6">
                 <h3>Payment</h3>
                 <hr>
-                Price:{{$data->price}}₺
+                <p><b>Price:  {{$data->price}}₺/Month</b></p>
+                <p><b>Total:  {{$total}}₺/{{$data->months}} Months</b></p>
+
                 <div class="form-group">
                     <input class="form-control" type="text" name="cardname" placeholder="Name and Surname">
                 </div>

@@ -1,4 +1,4 @@
-<div class="input-group mb-1">
+<div class="input-group">
     {{-- Close your eyes. Count to one. That is how long forever feels. --}}
     <input wire:model="search" name="search" type="text" class="form-control" list="myList"
            placeholder="Search Membership..."/>

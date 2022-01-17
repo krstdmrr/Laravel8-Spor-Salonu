@@ -28,7 +28,7 @@
                                     @csrf
                                         <div class="form-group">
                                             <label>Category</label>
-                                            <select name="category_id" id="select" class="form-control">
+                                            <select name="category_id" id="select" class="form-control" required>
                                                 @foreach($datalist as $rs)
                                                 <option value="{{$rs->id}}" @if($rs->id == $data->category_id) selected="selected" @endif >{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}</option>
                                                 @endforeach
@@ -36,31 +36,31 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Title</label>
-                                            <input type="text" name="title" value="{{$data->title}}" class="form-control">
+                                            <input type="text" name="title" value="{{$data->title}}" class="form-control" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Keywords</label>
-                                            <input type="text" name="keywords" value="{{$data->keywords}}" class="form-control">
+                                            <input type="text" name="keywords" value="{{$data->keywords}}" class="form-control" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Description</label>
-                                            <input type="text" name="description" value="{{$data->description}}" class="form-control">
+                                            <input type="text" name="description" value="{{$data->description}}" class="form-control" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Price</label>
-                                            <input type="number" name="price" value="{{$data->price}}" class="form-control">
+                                            <input type="number" name="price" value="{{$data->price}}" class="form-control" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Months</label>
-                                            <input type="number" name="months" value="{{$data->months}}" class="form-control">
+                                            <input type="number" name="months" value="{{$data->months}}" class="form-control" required>
                                         </div>
                                     <div class="form-group">
                                             <label>Trainer</label>
-                                            <input type="text" name="trainer" value="{{$data->trainer}}" class="form-control">
+                                            <input type="text" name="trainer" value="{{$data->trainer}}" class="form-control" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Details</label>
-                                            <textarea class="form-control" id="summary-ckeditor" name="detail">{{$data->detail}}</textarea>
+                                            <textarea class="form-control" id="summary-ckeditor" name="detail" required>{{$data->detail}}</textarea>
                                             <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
                                             <script>
                                                 CKEDITOR.replace( 'summary-ckeditor' );
@@ -68,11 +68,11 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Slug</label>
-                                            <input type="text" name="slug" value="{{$data->slug}}" class="form-control">
+                                            <input type="text" name="slug" value="{{$data->slug}}" class="form-control" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Image</label>
-                                            <input type="file" name="image"  class="form-control">
+                                            <input type="file" name="image"  class="form-control" >
 
                                             @if($data->image)
                                                 <img src="{{Storage::url($data->image)}}" height="60" alt="">,
