@@ -79,7 +79,6 @@
 
                     </div>
                     <div class="card-footer">
-                        footer
                     </div>
                 </div>
             </div>

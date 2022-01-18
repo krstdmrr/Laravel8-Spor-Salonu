@@ -73,7 +73,7 @@
                         <tr>
                             <th>Status</th>
                             <td>
-                                <select name="status">
+                                <select class="form-control"name="status">
                                     <option selected>{{$data->status}}</option>
                                     <option>True</option>
                                     <option>False</option>

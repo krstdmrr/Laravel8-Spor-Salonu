@@ -94,7 +94,7 @@
                         <tr>
                             <th>Admin Note</th>
                             <td>
-                                <textarea class="form-control" id="note" name="note">{{$data->note}}</textarea></td>
+                                <textarea class="form-control" id="note" name="note" required>{{$data->note}}</textarea></td>
                         </tr>
                         <tr>
                             <td></td>

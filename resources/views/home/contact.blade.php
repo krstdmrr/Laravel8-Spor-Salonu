@@ -91,7 +91,7 @@
                                                 <input class="form-control valid" name="name" id="name" type="text"
                                                        onfocus="this.placeholder = ''"
                                                        onblur="this.placeholder = 'Enter your name & surname'"
-                                                       placeholder="Enter your name">
+                                                       placeholder="Enter your name" required>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
@@ -99,7 +99,7 @@
                                                 <input class="form-control valid" name="phone" id="phone" type="text"
                                                        onfocus="this.placeholder = ''"
                                                        onblur="this.placeholder = 'Enter your name & phone number'"
-                                                       placeholder="Enter your phone number">
+                                                       placeholder="Enter your phone number" required>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
@@ -107,7 +107,7 @@
                                                 <input class="form-control valid" name="email" id="email" type="email"
                                                        onfocus="this.placeholder = ''"
                                                        onblur="this.placeholder = 'Enter email address'"
-                                                       placeholder="Email">
+                                                       placeholder="Email" required>
                                             </div>
                                         </div>
                                         <div class="col-12">
@@ -115,15 +115,15 @@
                                                 <input class="form-control" name="subject" id="subject" type="text"
                                                        onfocus="this.placeholder = ''"
                                                        onblur="this.placeholder = 'Enter Subject'"
-                                                       placeholder="Enter Subject">
+                                                       placeholder="Enter Subject" required>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <textarea class="input form-control w-100" name="message" id="message"
+                                                <textarea class="input form-control w-100" name="message" id="message "
                                                           cols="30" rows="7    " onfocus="this.placeholder = ''"
                                                           onblur="this.placeholder = 'Enter Message'"
-                                                          placeholder=" Enter Message"></textarea>
+                                                          placeholder=" Enter Message" required></textarea>
                                             </div>
                                         </div>
                                     </div>

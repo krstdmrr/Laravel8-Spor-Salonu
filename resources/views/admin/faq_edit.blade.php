@@ -36,10 +36,17 @@
                                     </div>
                                     <div>
                                         <label>Answer</label>
-                                        <textarea name="answer" required >{{$data->answer}}</textarea>
+                                        <textarea name="answer" required>{{$data->answer}}</textarea>
                                         <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
                                         <script>
                                             CKEDITOR.replace('answer');
+                                            $("form").submit( function(e) {
+                                                var totalcontentlength = CKEDITOR.instances['answer'].getData().replace(/<[^>]*>/gi, '').length;
+                                                if( !totalcontentlength ) {
+                                                    alert( 'Please enter Your a Any Comments' );
+                                                    e.preventDefault();
+                                                }
+                                            });
                                         </script>
                                     </div>
                                         <div class="form-group">

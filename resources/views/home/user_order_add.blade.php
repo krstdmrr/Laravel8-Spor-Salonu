@@ -41,7 +41,7 @@ $total=0;
                     <div class="col-md-6">
                         <div>
                             <label>Membership Months:</label>
-                            <input readonly class="form-control" type="text" name="months" value="6">
+                            <input readonly class="form-control" type="text" name="months" value="{{$data->months}}">
                         </div>
                         <div>
                             <label>Trainer:</label>

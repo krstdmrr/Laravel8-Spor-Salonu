@@ -43,6 +43,7 @@
                         <th>Date</th>
                         <th>Note</th>
                         <th>Status</th>
+                        <th>Action</th>
 
 
                     </tr>
@@ -59,11 +60,21 @@
                             <td>{{$rs->Startdate}}</td>
                             <td>{{$rs->Finishdate}}</td>
                             <td>{{$rs->months}}</td>
-                            <td>{{$rs->price}}</td>
+                            <td>{{$rs->price}}₺</td>
                             <td>{{$rs->trainer}}</td>
                             <td>{{$rs->created_at}}</td>
                             <td>{{$rs->note}}</td>
                             <td>{{$rs->status}}</td>
+                            @if($rs->status == 'New')
+                                <td>
+                                    <a href="{{route('user_order_delete',['id'=>$rs->id])}}"
+                                       onclick="return confirm('delete, are u sure?')"><i class="fa fa-eraser"></i></a>
+                                </td>
+                        @else
+                            <td>
+                                -
+                            </td>
+                        @endif
 
                     @endforeach
                     </tbody>
